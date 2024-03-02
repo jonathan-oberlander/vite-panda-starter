@@ -24,6 +24,9 @@ module.exports = {
       typescript: true,
       node: true,
     },
+    react: {
+      version: 'detect',
+    },
   },
   rules: {
     'react-refresh/only-export-components': [
@@ -48,5 +51,30 @@ module.exports = {
         fixStyle: 'inline-type-imports',
       },
     ],
+
+    'import/default': 'warn',
+    'import/no-cycle': 'error',
+    'import/no-named-as-default-member': 'off',
+    'import/no-unresolved': [2, { caseSensitive: false }],
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+          'object',
+          'type',
+        ],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+        },
+      },
+    ],
+    'import/export': 'warn',
   },
 }
